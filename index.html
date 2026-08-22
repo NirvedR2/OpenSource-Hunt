@@ -553,7 +553,11 @@
 
         const response =
           await fetch(API_URL);
-
+      repositories.sort(
+        (a, b) =>
+          b.stargazers_count -
+          a.stargazers_count
+      );
         if (!response.ok) {
           throw new Error(
             "Unable to fetch repositories."
