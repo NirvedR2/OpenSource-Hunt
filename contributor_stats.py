@@ -104,8 +104,8 @@ def get_top_contributors(org_name, repos, top_n=5):
     
     sorted_contributors = sorted(
         contributor_map.items(),
-        key=lambda x: x[0],
-        reverse=False
+        key=lambda x: x[1],
+        reverse=True
     )
     
     return sorted_contributors[:top_n - 1]
